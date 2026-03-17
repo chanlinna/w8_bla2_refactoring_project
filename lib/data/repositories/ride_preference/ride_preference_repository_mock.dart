@@ -1,7 +1,7 @@
 import 'package:w8_bla2_refactoring_project/data/repositories/ride_preference/ride_preference_repository.dart';
 import 'package:w8_bla2_refactoring_project/model/ride_pref/ride_pref.dart';
 
-class RidePreferenceMockRepository implements RidePreferenceRepository {
+class RidePreferenceRepositoryMock implements RidePreferenceRepository {
   final List<RidePreference> _preferenceHistory = [];
 
   @override
