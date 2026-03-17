@@ -260,16 +260,18 @@ class RidePrefInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onPressed,
-      title: Text(
-        title,
-        style: BlaTextStyles.button.copyWith(fontSize: 14, color: textColor),
+    return Material(
+      child: ListTile(
+        onTap: onPressed,
+        title: Text(
+          title,
+          style: BlaTextStyles.button.copyWith(fontSize: 14, color: textColor),
+        ),
+        leading: Icon(leftIcon, size: BlaSize.icon, color: BlaColors.iconLight),
+        trailing: rightIcon != null
+            ? BlaIconButton(icon: rightIcon, onPressed: onRightIconPressed)
+            : null,
       ),
-      leading: Icon(leftIcon, size: BlaSize.icon, color: BlaColors.iconLight),
-      trailing: rightIcon != null
-          ? BlaIconButton(icon: rightIcon, onPressed: onRightIconPressed)
-          : null,
     );
   }
 }
