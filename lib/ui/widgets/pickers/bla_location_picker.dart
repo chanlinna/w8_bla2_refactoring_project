@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:w8_bla2_refactoring_project/services/location_service.dart';
+import 'package:provider/provider.dart';
+import 'package:w8_bla2_refactoring_project/data/repositories/location/location_repository.dart';
 import 'package:w8_bla2_refactoring_project/ui/widgets/display/bla_divider.dart';
 
 import '../../../model/ride/locations.dart';
@@ -50,7 +51,9 @@ class _BlaLocationPickerState extends State<BlaLocationPicker> {
     if (currentSearchText.length < 2) {
       return [];
     }
-    return LocationsService.availableLocations
+    final locations = context.read<LocationRepository>().getAvailableLocations();
+
+    return locations
         .where(
           (location) => location.name.toUpperCase().contains(
             currentSearchText.toUpperCase(),
