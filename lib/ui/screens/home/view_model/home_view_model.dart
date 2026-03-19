@@ -22,6 +22,5 @@ class HomeViewModel extends ChangeNotifier {
   void dispose() {
     super.dispose();
     ridePreferenceState.removeListener(notifyListeners);
-    super.dispose();
   }
 }
