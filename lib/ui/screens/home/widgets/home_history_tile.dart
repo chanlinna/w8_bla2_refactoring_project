@@ -17,20 +17,22 @@ class HomeHistoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onPressed,
-      leading: Icon(Icons.history, color: BlaColors.iconLight),
-
-      title: Text(title, style: BlaTextStyles.body),
-      subtitle: Text(
-        subtitle,
-        style: BlaTextStyles.label.copyWith(color: BlaColors.textLight),
-      ),
-
-      trailing: Icon(
-        Icons.arrow_forward_ios,
-        color: BlaColors.iconLight,
-        size: 16,
+    return Material(
+      child: ListTile(
+        onTap: onPressed,
+        leading: Icon(Icons.history, color: BlaColors.iconLight),
+      
+        title: Text(title, style: BlaTextStyles.body),
+        subtitle: Text(
+          subtitle,
+          style: BlaTextStyles.label.copyWith(color: BlaColors.textLight),
+        ),
+      
+        trailing: Icon(
+          Icons.arrow_forward_ios,
+          color: BlaColors.iconLight,
+          size: 16,
+        ),
       ),
     );
   }
